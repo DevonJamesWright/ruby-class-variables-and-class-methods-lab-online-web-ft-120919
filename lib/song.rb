@@ -29,7 +29,7 @@ class Song
     if @genre_count[@genre]
       @genre_count[@genre] << [#{songs}]
     else 
-      @genre_count[@genre] = [songs]
+      @genre_count[@genre] = [#{songs}]
     end
     return
   end
