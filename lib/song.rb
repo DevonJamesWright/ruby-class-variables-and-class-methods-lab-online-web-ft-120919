@@ -26,8 +26,11 @@ class Song
    @@genres.uniq
   end 
   def self.genre_count(genre,songs)
-    if !@genre_count[@genre]
-      @genre_count
+    if @genre_count[@genre]
+      @genre_count[@genre] << [songs]
+    else 
+      @genre_count[@genre] = [songs]
+    end
   end
 end 
 
