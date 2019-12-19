@@ -26,12 +26,14 @@ class Song
    @@genres.uniq
   end 
   def self.genre_count(songs)
-    if @genre_count[@genre]
-      @genre_count[@genre] << [songs]
-    else 
-      @genre_count[@genre] = [songs]
-    end
-    return
+    genre_hash = {}
+      @@genres.each do |genre|
+        if genre_hash[genre]
+          genre_hash[genre] += 1 
+        else 
+          genre_hash[genre] = 1 
+        end
+      end
   end
 end 
 
